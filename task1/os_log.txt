@@ -1,0 +1,165 @@
+Pass: 0
+
+Free Memory: 6.819362640380859
+Total Memory: 15.740997314453125
+CPU Cores: 4
+User Info: {"uid":-1,"gid":-1,"username":"DELL","homedir":"C:\\Users\\DELL","shell":null}
+Platform: win32
+Uptime: 1.2011458333333334 seconds
+CPU Model: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+CPU Details: [{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":471359,"nice":0,"sys":654750,"idle":3198015,"irq":41046}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":446421,"nice":0,"sys":361250,"idle":3515859,"irq":14593}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":440750,"nice":0,"sys":370156,"idle":3512625,"irq":9421}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":432812,"nice":0,"sys":236328,"idle":3654390,"irq":7203}}]
+
+CPU Usage: {"user":31000,"system":46000}
+
+======================================================================================================================================
+
+Pass: 1
+
+Free Memory: 6.819362640380859
+Total Memory: 15.740997314453125
+CPU Cores: 4
+User Info: {"uid":-1,"gid":-1,"username":"DELL","homedir":"C:\\Users\\DELL","shell":null}
+Platform: win32
+Uptime: 1.2011458333333334 seconds
+CPU Model: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+CPU Details: [{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":471359,"nice":0,"sys":654750,"idle":3198015,"irq":41046}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":446421,"nice":0,"sys":361250,"idle":3515859,"irq":14593}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":440750,"nice":0,"sys":370156,"idle":3512625,"irq":9421}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":432812,"nice":0,"sys":236328,"idle":3654390,"irq":7203}}]
+
+CPU Usage: {"user":31000,"system":46000}
+
+======================================================================================================================================
+
+Pass: 2
+
+Free Memory: 6.819362640380859
+Total Memory: 15.740997314453125
+CPU Cores: 4
+User Info: {"uid":-1,"gid":-1,"username":"DELL","homedir":"C:\\Users\\DELL","shell":null}
+Platform: win32
+Uptime: 1.2011458333333334 seconds
+CPU Model: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+CPU Details: [{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":471359,"nice":0,"sys":654750,"idle":3198015,"irq":41046}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":446421,"nice":0,"sys":361250,"idle":3515859,"irq":14593}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":440750,"nice":0,"sys":370156,"idle":3512625,"irq":9421}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":432812,"nice":0,"sys":236328,"idle":3654390,"irq":7203}}]
+
+CPU Usage: {"user":31000,"system":46000}
+
+======================================================================================================================================
+
+Pass: 3
+
+Free Memory: 6.819362640380859
+Total Memory: 15.740997314453125
+CPU Cores: 4
+User Info: {"uid":-1,"gid":-1,"username":"DELL","homedir":"C:\\Users\\DELL","shell":null}
+Platform: win32
+Uptime: 1.2011458333333334 seconds
+CPU Model: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+CPU Details: [{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":471359,"nice":0,"sys":654750,"idle":3198015,"irq":41046}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":446421,"nice":0,"sys":361250,"idle":3515859,"irq":14593}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":440750,"nice":0,"sys":370156,"idle":3512625,"irq":9421}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":432812,"nice":0,"sys":236328,"idle":3654390,"irq":7203}}]
+
+CPU Usage: {"user":31000,"system":46000}
+
+======================================================================================================================================
+
+Pass: 4
+
+Free Memory: 6.819362640380859
+Total Memory: 15.740997314453125
+CPU Cores: 4
+User Info: {"uid":-1,"gid":-1,"username":"DELL","homedir":"C:\\Users\\DELL","shell":null}
+Platform: win32
+Uptime: 1.2011458333333334 seconds
+CPU Model: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+CPU Details: [{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":471359,"nice":0,"sys":654750,"idle":3198015,"irq":41046}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":446421,"nice":0,"sys":361250,"idle":3515859,"irq":14593}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":440750,"nice":0,"sys":370156,"idle":3512625,"irq":9421}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":432812,"nice":0,"sys":236328,"idle":3654390,"irq":7203}}]
+
+CPU Usage: {"user":31000,"system":46000}
+
+======================================================================================================================================
+
+Pass: 5
+
+Free Memory: 6.819362640380859
+Total Memory: 15.740997314453125
+CPU Cores: 4
+User Info: {"uid":-1,"gid":-1,"username":"DELL","homedir":"C:\\Users\\DELL","shell":null}
+Platform: win32
+Uptime: 1.2011458333333334 seconds
+CPU Model: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+CPU Details: [{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":471359,"nice":0,"sys":654750,"idle":3198015,"irq":41046}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":446421,"nice":0,"sys":361250,"idle":3515859,"irq":14593}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":440750,"nice":0,"sys":370156,"idle":3512625,"irq":9421}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":432812,"nice":0,"sys":236328,"idle":3654390,"irq":7203}}]
+
+CPU Usage: {"user":31000,"system":46000}
+
+======================================================================================================================================
+
+Pass: 6
+
+Free Memory: 6.819362640380859
+Total Memory: 15.740997314453125
+CPU Cores: 4
+User Info: {"uid":-1,"gid":-1,"username":"DELL","homedir":"C:\\Users\\DELL","shell":null}
+Platform: win32
+Uptime: 1.2011458333333334 seconds
+CPU Model: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+CPU Details: [{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":471359,"nice":0,"sys":654750,"idle":3198015,"irq":41046}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":446421,"nice":0,"sys":361250,"idle":3515859,"irq":14593}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":440750,"nice":0,"sys":370156,"idle":3512625,"irq":9421}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":432812,"nice":0,"sys":236328,"idle":3654390,"irq":7203}}]
+
+CPU Usage: {"user":31000,"system":46000}
+
+======================================================================================================================================
+
+Pass: 7
+
+Free Memory: 6.819362640380859
+Total Memory: 15.740997314453125
+CPU Cores: 4
+User Info: {"uid":-1,"gid":-1,"username":"DELL","homedir":"C:\\Users\\DELL","shell":null}
+Platform: win32
+Uptime: 1.2011458333333334 seconds
+CPU Model: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+CPU Details: [{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":471359,"nice":0,"sys":654750,"idle":3198015,"irq":41046}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":446421,"nice":0,"sys":361250,"idle":3515859,"irq":14593}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":440750,"nice":0,"sys":370156,"idle":3512625,"irq":9421}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":432812,"nice":0,"sys":236328,"idle":3654390,"irq":7203}}]
+
+CPU Usage: {"user":31000,"system":46000}
+
+======================================================================================================================================
+
+Pass: 8
+
+Free Memory: 6.819362640380859
+Total Memory: 15.740997314453125
+CPU Cores: 4
+User Info: {"uid":-1,"gid":-1,"username":"DELL","homedir":"C:\\Users\\DELL","shell":null}
+Platform: win32
+Uptime: 1.2011458333333334 seconds
+CPU Model: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+CPU Details: [{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":471359,"nice":0,"sys":654750,"idle":3198015,"irq":41046}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":446421,"nice":0,"sys":361250,"idle":3515859,"irq":14593}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":440750,"nice":0,"sys":370156,"idle":3512625,"irq":9421}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":432812,"nice":0,"sys":236328,"idle":3654390,"irq":7203}}]
+
+CPU Usage: {"user":31000,"system":46000}
+
+======================================================================================================================================
+
+Pass: 9
+
+Free Memory: 6.819362640380859
+Total Memory: 15.740997314453125
+CPU Cores: 4
+User Info: {"uid":-1,"gid":-1,"username":"DELL","homedir":"C:\\Users\\DELL","shell":null}
+Platform: win32
+Uptime: 1.2011458333333334 seconds
+CPU Model: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+CPU Details: [{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":471359,"nice":0,"sys":654750,"idle":3198015,"irq":41046}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":446421,"nice":0,"sys":361250,"idle":3515859,"irq":14593}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":440750,"nice":0,"sys":370156,"idle":3512625,"irq":9421}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":432812,"nice":0,"sys":236328,"idle":3654390,"irq":7203}}]
+
+CPU Usage: {"user":31000,"system":46000}
+
+======================================================================================================================================
+
+Pass: 10
+
+Free Memory: 6.819362640380859
+Total Memory: 15.740997314453125
+CPU Cores: 4
+User Info: {"uid":-1,"gid":-1,"username":"DELL","homedir":"C:\\Users\\DELL","shell":null}
+Platform: win32
+Uptime: 1.2011458333333334 seconds
+CPU Model: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+CPU Details: [{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":471359,"nice":0,"sys":654750,"idle":3198015,"irq":41046}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":446421,"nice":0,"sys":361250,"idle":3515859,"irq":14593}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":440750,"nice":0,"sys":370156,"idle":3512625,"irq":9421}},{"model":"11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz","speed":2995,"times":{"user":432812,"nice":0,"sys":236328,"idle":3654390,"irq":7203}}]
+
+CPU Usage: {"user":31000,"system":46000}
+
+======================================================================================================================================
+
