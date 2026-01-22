@@ -1,0 +1,5 @@
+PS C:\Users\ay033\javascript22part4\Assignment\NodejsAssignment\Question2CustomModule> node app.js
+Original: Divyanshu Gupta
+Capitalized: Divyanshu Gupta
+Reversed: hgnis hsaka
+Vowels Count: 3

@@ -1,0 +1,48 @@
+
+
+Time: 1/21/2026, 11:43:55 AM
+Platform: win32
+OS Type: Windows_NT
+OS Release: 10.0.26200
+Architecture: x64
+
+CPU Model: AMD Ryzen 5 7520U with Radeon Graphics         
+CPU Cores: 8
+CPU Speed: 2794 MHz
+
+Total Memory: 15.28 GB
+Free Memory: 4.78 GB
+Used Memory: 10.50 GB
+
+
+
+Time: 1/21/2026, 11:44:00 AM
+Platform: win32
+OS Type: Windows_NT
+OS Release: 10.0.26200
+Architecture: x64
+
+CPU Model: AMD Ryzen 5 7520U with Radeon Graphics         
+CPU Cores: 8
+CPU Speed: 2794 MHz
+
+Total Memory: 15.28 GB
+Free Memory: 4.76 GB
+Used Memory: 10.52 GB
+
+
+
+Time: 1/21/2026, 11:44:05 AM
+Platform: win32
+OS Type: Windows_NT
+OS Release: 10.0.26200
+Architecture: x64
+
+CPU Model: AMD Ryzen 5 7520U with Radeon Graphics         
+CPU Cores: 8
+CPU Speed: 2794 MHz
+
+Total Memory: 15.28 GB
+Free Memory: 4.79 GB
+Used Memory: 10.49 GB
+
