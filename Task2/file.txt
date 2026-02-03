@@ -1,0 +1,5 @@
+INFO Server started
+ERROR Database connection failed
+WARN Low memory
+INFO User logged in
+ERROR File not found

@@ -1,0 +1,55 @@
+1. What is the difference between synchronous and asynchronous file operations?
+
+    ---> Synchronous blocks execution until completion, while asynchronous runs in
+     the background without blocking.
+
+2. When should you use file streams instead of reading the entire file?
+
+    ---> We use the file streams when the file is large or needs to be processed
+    gradually without loading it full into the memory.
+
+
+3. Explain the purpose of the ‘utf8’ encoding parameter in file operations.
+
+   --->  The 'utf8' encoding parameters tell the system to read or write the file as
+   human-readable text (Unicode Character) instead of raw binary data , so text is
+   correctly interpreted.
+
+4. What are the common error codes in file system operations and what do they mean?
+
+   --->  In **Node.js**, common file system error codes and their meanings are:
+
+         // ENOENT - File or directory does not exist
+         // EACCES - Permission denied
+         // EEXIST - File already exists
+         // EISDIR - Expected file but found directory
+         // ENOTDIR - Expected directory but found file
+
+         These errors are usually found in `err.code` when using the `fs` module.
+
+
+5. How would you safely delete a directory with all its contents?
+
+   ---> In node js , we use -> fs.rm(path,{recurisve: true, force: true }) to safely
+   delete a directory and all its contents.
+
+6. Explain the concept of piping in streams with an example.
+
+   ---> Piping in streams means sending data directly from one stream into another
+   without manual handling
+   Piping connects a readable stream to a writable stream automatically
+
+
+7. Why is it important to handle errors in file operations?
+
+   ---> It's important to handle errors in file operations to prevent crashes
+   avoid data loss and ensures the application responds safely to issues like meaning
+   files ,permissions problems , or disk failures.
+
+   Proper error handling is crucial for robust file system operations.
+
+
+8. What is the difference between writeFile and appendFile methods?
+
+   ---> In writeFile replace's the file content with the old content ,
+   while appendFile adds new data in the old content without  deleting.
