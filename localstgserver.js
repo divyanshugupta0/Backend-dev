@@ -2,15 +2,19 @@ const express = require("express");
 const app = express();
 const port = 8000;
 
+const fs = require('fs');
+const path = require('path');
+const os = require('os');
+
 // Middleware to parse JSON body
 app.use(express.json());
 
-// Sample data
-const students = [
-    { id: 1, name: "John", age: 20, branch: "CSE" },
-    { id: 2, name: "Jane", age: 22, branch: "ESE" },
-    { id: 3, name: "Bob", age: 21, branch: "AIML" },
-];
+const students =[
+        { id: 1, name: "John", age: 20, branch: "CSE" },
+        { id: 2, name: "Jane", age: 22, branch: "ESE" },
+        { id: 3, name: "Bob", age: 21, branch: "AIML" },
+    ];
+
 
 // Home route
 app.get("/", (req, res) => {
@@ -57,10 +61,17 @@ app.post("/students/register", (req, res) => {
         res.json("Student with this ID already exists");
     }else{
         students.push(data);
+        fs.appendFile("./students.txt",data.req.body,(err)=>{
+            if(err){
+                console.log(err);
+            }else{
+                console.log("\nFile appended successfully");
+            }
+        });
     }
     res.status(201).json({
         message: "Student registered successfully",
-        student: data,
+        student: data,                          
     });
     
 });
