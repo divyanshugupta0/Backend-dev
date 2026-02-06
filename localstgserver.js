@@ -12,7 +12,7 @@ app.use(express.json());
 const students =[
         { id: 1, name: "John", age: 20, branch: "CSE" },
         { id: 2, name: "Jane", age: 22, branch: "ESE" },
-        { id: 3, name: "Bob", age: 21, branch: "AIML" },
+        { id: 3, name: "Bobby", age: 21, branch: "AIML" },
     ];
 
 
