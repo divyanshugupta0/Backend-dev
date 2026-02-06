@@ -2,9 +2,9 @@
     "name": "express-backend",
     "version": "1.0.0",
     "description": "Express Backend Tutorial",
-    "main": "index2.js",
+    "main": "serverjsonwrite.js",
     "scripts": {
-        "start": "node index2.js",
+        "start": "node serverjsonwrite.js",
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "node --watch index.js"
     },
