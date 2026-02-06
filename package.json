@@ -2,9 +2,9 @@
     "name": "express-backend",
     "version": "1.0.0",
     "description": "Express Backend Tutorial",
-    "main": "serverjsonwrite.js",
+    "main": "readWritetoFilefunc.js",
     "scripts": {
-        "start": "node serverjsonwrite.js",
+        "start": "node readWritetoFilefunc.js",
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "node --watch index.js"
     },
