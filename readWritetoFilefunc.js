@@ -8,7 +8,7 @@ const os = require('os');
 // import * as res from 'express/lib/response';
 
 // Middleware to parse JSON body
-app.use(express.json());
+app.use(express.json());//if their are multiple middlewares then we can use app.use() method to use them all at once and next() method is -
 
 const studentsFilePath = path.join(__dirname, "students.json");
 
@@ -170,7 +170,7 @@ app.delete("/students/delete/:id", (req, res) => {
         if (studentIndex === -1) {
             return res.status(404).send("Student not found");
         }
-        studentsArray.splice(studentIndex, 1);
+        studentsArray.splice(studentIndex, 1);//we can also use filter method to remove the student from the array
 
         fs.writeFile(
             studentsFilePath,
