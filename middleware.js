@@ -46,7 +46,7 @@ const logger = () => {
     });
     next(); // Pass control to the next middleware
 };
-
+// Note: The logger middleware is defined but not used in the code. To use it, you can add the following line before the other middleware functions:
 app.use(logger); // Use the logger middleware for all routes
 
 const studentsFilePath = path.join(__dirname, "students.json"); 
