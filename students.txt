@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "John",
+    "age": 20,
+    "branch": "CSE"
+  },
+  {
+    "id": 2,
+    "name": "Jane",
+    "age": 22,
+    "branch": "ESE"
+  },
+  {
+    "id": 3,
+    "name": "Bob",
+    "age": 21,
+    "branch": "AIML"
+  },
+  {
+    "id": 6,
+    "name": "Rudra",
+    "age": 21,
+    "branch": "CSE"
+  },
+  {
+    "id": 8,
+    "name": "Divyanshu Gupta",
+    "age": 21,
+    "branch": "CSE"
+  }
+]

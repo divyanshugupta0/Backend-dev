@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Form</h1>
+
+<form action="/students/register" method="POST">
+    <input type="text" name="name" placeholder="name" required>
+    <select name="branch" required>
+        <option value="">Select Branch</option>
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="MECH">MECH</option>
+    </select>
+    <input type="number" name="age" placeholder="Age" required>
+    <button type="submit">Submit</button>
+</form>
+
+<h3>Users:</h3>
+
+<ol>
+    <% users.forEach(user => { %>
+        <li>
+        <ul>
+        <li><%= user.id %> <li><%= user.name %></li>
+        <li><%= user.age %></li>
+        <li><%= user.branch %></li></li>
+        <ul>
+        </li>
+    <% }) %>
+</ol>
+</body>
+</html>
+
+
