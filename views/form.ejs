@@ -25,13 +25,14 @@
 
 <ol>
     <% users.forEach(user => { %>
-        <li>
         <ul>
-        <li><%= user.id %> <li><%= user.name %></li>
+            <ol>
+        <li><%= user.id %> </li><!-- <%= %>  "=" it is used to print some thing for command the equalto will not come-->
+        <li><%= user.name %></li>
         <li><%= user.age %></li>
-        <li><%= user.branch %></li></li>
-        <ul>
-        </li>
+        <li><%= user.branch %></li>
+            </ol>
+        </ul>
     <% }) %>
 </ol>
 </body>

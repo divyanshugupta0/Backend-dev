@@ -8,10 +8,22 @@
 <body>
     
     <h1>Form</h1>
-    <form action="/submit" method="POST">
-        <input type="text" name="username" placeholder="Username">
-        <button type="submit">Submit</button>
-    </form>
 
+<form action="/students/register" method="POST">
+    <input type="text" name="name" placeholder="name" required>
+    <select name="branch" required>
+        <option value="">Select Branch</option>
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="MECH">MECH</option>
+    </select>
+    <input type="number" name="age" placeholder="Age" required>
+    <button type="submit">Submit</button>
+</form>
+
+<h3>Users:</h3>
+<div>
 </body>
 </html>
+
+
