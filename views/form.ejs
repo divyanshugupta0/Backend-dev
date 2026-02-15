@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><a href="/students">Students -></a></p>
+    
+    <h1>Form</h1>
+
+<form action="/students/register" method="POST">
+    <input type="text" name="name" placeholder="name" required>
+    <select name="branch" required>
+        <option value="">Select Branch</option>
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="MECH">MECH</option>
+    </select>
+    <input type="number" name="age" placeholder="Age" required>
+    <button type="submit">Submit</button>
+</form>
+
+<h3>Users:</h3>
+
+<% if (message) { %>
+        <h3><%= message %></h3>
+    <% } else if (users && users.length) { %>
+        <h3>Total Users: <%= users.length %></h3>
+        <table border="1" cellpadding="6" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Branch</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user => { %>
+                    <tr>
+                        <td><%= user.id %></td>
+                        <td><%= user.name %></td>
+                        <td><%= user.age %></td>
+                        <td><%= user.branch %></td>
+                        <td>
+                            <form action="/delete/<%= user.id %>" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                                <button type="submit">Delete</button>
+                            </form>
+                            </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } %>
+
+</body>
+</html>
+
+
