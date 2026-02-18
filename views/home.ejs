@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Library API</title>
+    <style>
+        :root {
+            --ink: #1f1c1a;
+            --muted: #5c514d;
+            --paper: #fff7ef;
+            --accent: #d85f3a;
+            --accent-deep: #a63b1d;
+            --accent-soft: #f0c1a5;
+            --shadow: rgba(20, 12, 8, 0.18);
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            color: var(--ink);
+            background: radial-gradient(circle at 15% 10%, #f7e6d8 0%, rgba(247, 230, 216, 0) 55%),
+                radial-gradient(circle at 85% 20%, #f2d7c4 0%, rgba(242, 215, 196, 0) 50%),
+                linear-gradient(120deg, #fff7ef 0%, #f7efe7 45%, #f9e1d4 100%);
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        }
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 48px 24px 72px;
+        }
+        .hero {
+            display: grid;
+            gap: 20px;
+            padding: 28px 32px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.78);
+            box-shadow: 0 18px 40px var(--shadow);
+            backdrop-filter: blur(8px);
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: clamp(2.2rem, 3vw, 3rem);
+            letter-spacing: 0.5px;
+        }
+        .hero p {
+            margin: 0;
+            color: var(--muted);
+            max-width: 560px;
+            line-height: 1.6;
+        }
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .chip {
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .grid {
+            margin-top: 28px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+        .card {
+            padding: 22px 22px 26px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.86);
+            box-shadow: 0 14px 30px var(--shadow);
+        }
+        .card h2 {
+            margin: 0 0 10px;
+            font-size: 1.4rem;
+        }
+        .list {
+            margin: 12px 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+        .list li {
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: #fff3ea;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .list li strong {
+            color: var(--ink);
+        }
+        .empty {
+            background: #fbe9dc;
+            color: var(--muted);
+        }
+        .api {
+            margin-top: 26px;
+            padding: 18px 20px;
+            border-radius: 16px;
+            background: #1f1c1a;
+            color: #fff7ef;
+            font-family: "Trebuchet MS", "Lucida Sans", "Lucida Sans Unicode", sans-serif;
+            font-size: 0.95rem;
+        }
+        .api code {
+            color: #ffd9c3;
+        }
+        .forms {
+            margin-top: 18px;
+            display: grid;
+            gap: 14px;
+        }
+        form {
+            display: grid;
+            gap: 10px;
+        }
+        label {
+            font-weight: 600;
+            color: var(--muted);
+        }
+        input {
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1px solid #e7cdbc;
+            background: #fffdfb;
+            font-family: inherit;
+        }
+        button {
+            border: 0;
+            border-radius: 12px;
+            padding: 10px 14px;
+            font-weight: 700;
+            background: var(--accent);
+            color: #fff7ef;
+            cursor: pointer;
+            transition: transform 0.15s ease, background 0.15s ease;
+        }
+        button:hover {
+            transform: translateY(-1px);
+            background: var(--accent-deep);
+        }
+        @media (max-width: 640px) {
+            .hero {
+                padding: 22px;
+            }
+            .api {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <% const bookCount = books.length; %>
+    <% const authorCount = authors.length; %>
+    <main class="page">
+        <section class="hero">
+            <h1>Library API Workspace</h1>
+            <p>Use this page to browse the current data in your books and authors collections. The API endpoints below are ready for filtering, pagination, and search.</p>
+            <div class="stats">
+                <div class="chip">Books: <%= bookCount %></div>
+                <div class="chip">Authors: <%= authorCount %></div>
+            </div>
+        </section>
+
+        <section class="grid">
+            <div class="card">
+                <h2>Books Snapshot</h2>
+                <ul class="list">
+                    <% if (books.length === 0) { %>
+                        <li class="empty">No books added yet.</li>
+                    <% } else { %>
+                        <% books.slice(0, 6).forEach((book) => { %>
+                            <li>
+                                <strong><%= book.title %></strong>
+                                <span><%= book.author %> • <%= book.year %></span>
+                            </li>
+                        <% }) %>
+                    <% } %>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>Authors Snapshot</h2>
+                <ul class="list">
+                    <% if (authors.length === 0) { %>
+                        <li class="empty">No authors added yet.</li>
+                    <% } else { %>
+                        <% authors.slice(0, 6).forEach((author) => { %>
+                            <li>
+                                <strong><%= author.name %></strong>
+                                <span><%= author.country || 'Unknown' %></span>
+                            </li>
+                        <% }) %>
+                    <% } %>
+                </ul>
+            </div>
+        </section>
+
+        <section class="api">
+            <div>GET <code>/books?author=Name&year=2020&page=1&limit=10</code></div>
+            <div>GET <code>/books/search?title=keyword</code></div>
+            <div>POST <code>/books</code> | POST <code>/authors</code></div>
+        </section>
+
+        <section class="forms">
+            <div class="card">
+                <h2>Search by Title</h2>
+                <form method="get" action="/books/search">
+                    <label for="title">Book title</label>
+                    <input id="title" name="title" placeholder="Type a title" />
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            <div class="card">
+                <h2>Filter Books</h2>
+                <form method="get" action="/books">
+                    <label for="author">Author</label>
+                    <input id="author" name="author" placeholder="Exact author match" />
+                    <label for="year">Year</label>
+                    <input id="year" name="year" placeholder="2021" />
+                    <label for="page">Page</label>
+                    <input id="page" name="page" placeholder="1" />
+                    <label for="limit">Limit</label>
+                    <input id="limit" name="limit" placeholder="10" />
+                    <button type="submit">Open JSON</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

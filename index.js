@@ -8,6 +8,9 @@ const PORT = 3000;
 const booksPath = path.join(__dirname, 'books.json');
 const authorsPath = path.join(__dirname, 'authors.json');
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 app.use(express.json());
 
 const readJson = async (file) => {
@@ -46,6 +49,15 @@ const parsePagination = (req) => {
     if (!Number.isInteger(limit) || limit < 1 || limit > 100) return { error: 'limit must be an integer between 1 and 100' };
     return { page, limit };
 };
+
+app.get('/', async (req, res) => {
+    try {
+        const [books, authors] = await Promise.all([readJson(booksPath), readJson(authorsPath)]);
+        res.render('home', { books, authors });
+    } catch (err) {
+        res.render('home', { books: [], authors: [] });
+    }
+});
 
 app.get('/books/search', async (req, res) => {
     try {
