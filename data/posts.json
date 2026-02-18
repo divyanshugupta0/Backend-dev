@@ -1,0 +1,20 @@
+[
+  {
+    "id": "p1",
+    "title": "Welcome to the Blog",
+    "body": "This is a starter post for the assignment blog. Use the new post form to add your own entries.",
+    "date": "2026-02-18T10:00:00.000Z"
+  },
+  {
+    "id": "p2",
+    "title": "Routing and EJS",
+    "body": "Each blog entry has its own route. EJS renders the list, the detail view, and the form using one template.",
+    "date": "2026-02-18T12:30:00.000Z"
+  },
+  {
+    "id": "mlsdpea0",
+    "title": "hlo",
+    "body": "fgvbnm",
+    "date": "2026-02-18T18:41:52.008Z"
+  }
+]

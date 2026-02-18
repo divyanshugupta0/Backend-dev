@@ -1,107 +1,117 @@
-const express = require('express');
-const app = express();
-const PORT = 3000;
-const fs = require('fs').promises;
-const path = require('path');
-const dataPath = path.join(__dirname, 'students.json');
+const express = require("express")
+const path = require("path")
+const fs = require("fs").promises
 
-app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended: true }));
+const app = express()
+const PORT = 3000
 
+const dataDir = path.join(__dirname, "data")
+const usersFile = path.join(dataDir, "users.json")
+const postsFile = path.join(dataDir, "posts.json")
+const galleryDir = path.join(__dirname, "public", "gallery")
 
-app.get('/', async (req, res) => {
-    try {
-        const data = await fs.readFile(dataPath, 'utf-8');
-        const users = JSON.parse(data);
+app.set("view engine", "ejs")
+app.set("views", path.join(__dirname, "views"))
 
-        let message = null;
+app.use(express.urlencoded({ extended: true }))
+app.use(express.static(path.join(__dirname, "public")))
 
-        if (users.length === 0) {
-            message = "User Not Found";
-        }
+app.use((req, res, next) => {
+  const start = process.hrtime.bigint()
+  res.on("finish", () => {
+    const diff = Number(process.hrtime.bigint() - start) / 1e6
+    console.log(`${req.method} ${req.originalUrl} ${res.statusCode} ${diff.toFixed(2)} ms`)
+  })
+  next()
+})
 
-        res.render('form', { users, message });
+async function readJson(file, fallback) {
+  try {
+    const data = await fs.readFile(file, "utf-8")
+    return JSON.parse(data)
+  } catch (err) {
+    return fallback
+  }
+}
 
-    } catch (err) {
-        res.render('form', { users: [], message: null });
-    }
-});
+async function writeJson(file, data) {
+  await fs.writeFile(file, JSON.stringify(data, null, 2))
+}
 
+app.get("/", (req, res) => {
+  res.render("index", { view: "home" })
+})
 
-app.post('/students/register', async (req, res) => {
-    try {
-        const data = await fs.readFile(dataPath, 'utf-8');
-        const users = JSON.parse(data);
-        if(users.length === 0){
-            users.push({ 
-                id : 1,
-                name: req.body.name ,
-                age : req.body.age,
-                branch : req.body.branch
-            });
-        } else {
-        users.push({ 
-                id : users.length + 1,
-                name: req.body.name ,
-                age : req.body.age,
-                branch : req.body.branch
-        });
-        }
+app.get("/users", async (req, res) => {
+  const users = await readJson(usersFile, [])
+  const name = (req.query.name || "").trim()
+  const filtered = name
+    ? users.filter((u) => u.name.toLowerCase().includes(name.toLowerCase()))
+    : users
+  res.render("index", { view: "users", users: filtered, query: { name } })
+})
 
-        await fs.writeFile(dataPath, JSON.stringify(users, null, 2));
+app.get("/contact", (req, res) => {
+  const sent = req.query.sent === "1"
+  res.render("index", { view: "contact", sent })
+})
 
-        res.redirect('/');
-    } catch (err) {
-        res.send('Error saving student');
-    }
-});
+app.post("/contact", (req, res) => {
+  res.redirect("/contact?sent=1")
+})
 
-app.get('/students', async (req,res) => {
-    try {       
-        const data = await fs.readFile(dataPath, 'utf-8');
-        var users = JSON.parse(data);
-        let message = null;
-        if(users.length === 0){
-            message = "User Not Found";
-        }
-        res.render('students', { users,message });
-    } catch (err) {
-        res.render('students', { users: [], message: null });
-    }
-});
-app.get(['/students/branch/:branch','/branch/:branch'], async (req,res) => {
-    try {       
-        const data = await fs.readFile(dataPath, 'utf-8');
-        const users = JSON.parse(data);
-        const filteredUsers = users.filter(user => user.branch.toLowerCase() === req.params.branch.toLowerCase());
-        let message = null;
-        if(filteredUsers.length === 0){
-            message = "User Not Found";
-        }
-        if(req.originalUrl.startsWith('/students/branch/')){
-            res.render('students', { users: filteredUsers,message });
-        } else if(req.originalUrl.startsWith('/branch/')){
-            res.render('form', { users: filteredUsers,message });
-        }
-    } catch (err) {
-        res.render('students', { users: [], message: null });
-    }
-});
-app.post(['/students/delete/:id','/delete/:id'], async (req,res) => {
-    try {       
-        const data = await fs.readFile(dataPath, 'utf-8');
-        const users = JSON.parse(data);
-        const filteredUsers = users.filter(user => user.id !== parseInt(req.params.id));
-        await fs.writeFile(dataPath, JSON.stringify(filteredUsers, null, 2));
-        if(req.originalUrl.startsWith('/students/delete/')){
-            res.redirect('/students');
-        } else if(req.originalUrl.startsWith('/delete/')){
-            res.redirect('/');
-        }
-    }catch (err) {
-        res.send('Error deleting student'); 
-    }
-    });
+app.get("/gallery", async (req, res) => {
+  let images = []
+  try {
+    const files = await fs.readdir(galleryDir)
+    images = files.filter((f) => /\.(png|jpg|jpeg|gif|svg|webp)$/i.test(f))
+  } catch (err) {
+    images = []
+  }
+  res.render("index", { view: "gallery", images })
+})
+
+app.get("/blog", async (req, res) => {
+  const posts = await readJson(postsFile, [])
+  const sorted = posts.slice().sort((a, b) => new Date(b.date) - new Date(a.date))
+  res.render("index", { view: "blog-list", posts: sorted })
+})
+
+app.get("/blog/new", (req, res) => {
+  res.render("index", { view: "blog-new" })
+})
+
+app.post("/blog", async (req, res) => {
+  const posts = await readJson(postsFile, [])
+  const title = (req.body.title || "").trim()
+  const body = (req.body.body || "").trim()
+  if (!title || !body) {
+    return res.redirect("/blog/new")
+  }
+  const post = {
+    id: Date.now().toString(36),
+    title,
+    body,
+    date: new Date().toISOString()
+  }
+  posts.push(post)
+  await writeJson(postsFile, posts)
+  res.redirect(`/blog/${post.id}`)
+})
+
+app.get("/blog/:id", async (req, res) => {
+  const posts = await readJson(postsFile, [])
+  const post = posts.find((p) => p.id === req.params.id)
+  if (!post) {
+    return res.status(404).render("index", { view: "404" })
+  }
+  res.render("index", { view: "blog-view", post })
+})
+
+app.use((req, res) => {
+  res.status(404).render("index", { view: "404" })
+})
+
 app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-});
+  console.log(`Server running at http://localhost:${PORT}`)
+})

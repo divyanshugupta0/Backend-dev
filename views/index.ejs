@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 3 EJS</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo">A3</div>
+        <div>
+          <p class="kicker">Node.js and EJS</p>
+          <h1>Assignment 3</h1>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="/" class="<%= view === 'home' ? 'active' : '' %>">Home</a>
+        <a href="/users" class="<%= view === 'users' ? 'active' : '' %>">Users</a>
+        <a href="/contact" class="<%= view === 'contact' ? 'active' : '' %>">Contact</a>
+        <a href="/gallery" class="<%= view === 'gallery' ? 'active' : '' %>">Gallery</a>
+        <a href="/blog" class="<%= view === 'blog-list' ? 'active' : '' %>">Blog</a>
+        <a href="/blog/new" class="<%= view === 'blog-new' ? 'active' : '' %>">New Post</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <% if (view === "home") { %>
+      <section class="card hero">
+        <div>
+          <h2>All tasks in one EJS template</h2>
+          <p>Use the navigation to explore each feature: filtering, contact form, gallery, and blog.</p>
+          <div class="pill-row">
+            <span class="pill">Query filter</span>
+            <span class="pill">Response time log</span>
+            <span class="pill">POST form</span>
+            <span class="pill">Custom 404</span>
+            <span class="pill">Static gallery</span>
+            <span class="pill">Blog routes</span>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="stat">
+            <span>Users</span>
+            <strong>5</strong>
+          </div>
+          <div class="stat">
+            <span>Gallery</span>
+            <strong>4</strong>
+          </div>
+          <div class="stat">
+            <span>Posts</span>
+            <strong>2</strong>
+          </div>
+        </div>
+      </section>
+      <section class="grid">
+        <div class="card">
+          <h3>Filter users by name</h3>
+          <p>Visit the users page and use the query parameter in the URL.</p>
+          <a class="link" href="/users?name=ar">Try a filter</a>
+        </div>
+        <div class="card">
+          <h3>Contact form</h3>
+          <p>Submit a POST request and see the success state.</p>
+          <a class="link" href="/contact">Open contact</a>
+        </div>
+        <div class="card">
+          <h3>Photo gallery</h3>
+          <p>Images are loaded from static files and rendered dynamically.</p>
+          <a class="link" href="/gallery">View gallery</a>
+        </div>
+      </section>
+      <% } %>
+
+      <% if (view === "users") { %>
+      <section class="card">
+        <div class="section-head">
+          <h2>Filter Users</h2>
+          <span class="pill"><%= users.length %> results</span>
+        </div>
+        <form class="form-inline" method="GET" action="/users">
+          <input type="text" name="name" placeholder="Search by name" value="<%= query.name %>" />
+          <button class="btn" type="submit">Filter</button>
+          <a class="ghost" href="/users">Reset</a>
+        </form>
+        <% if (users.length === 0) { %>
+        <p class="empty">No users found</p>
+        <% } else { %>
+        <ul class="list">
+          <% users.forEach((u) => { %>
+          <li>
+            <div class="avatar"><%= u.name.charAt(0) %></div>
+            <div>
+              <strong><%= u.name %></strong>
+              <span><%= u.email %></span>
+            </div>
+          </li>
+          <% }) %>
+        </ul>
+        <% } %>
+      </section>
+      <% } %>
+
+      <% if (view === "contact") { %>
+      <section class="card">
+        <div class="section-head">
+          <h2>Contact Form</h2>
+          <span class="pill">POST /contact</span>
+        </div>
+        <% if (sent) { %>
+        <div class="success">Thanks for reaching out. We received your message.</div>
+        <% } %>
+        <form class="form" method="POST" action="/contact">
+          <label>
+            Name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="btn" type="submit">Send message</button>
+        </form>
+      </section>
+      <% } %>
+
+      <% if (view === "gallery") { %>
+      <section class="card">
+        <div class="section-head">
+          <h2>Photo Gallery</h2>
+          <span class="pill">Static files</span>
+        </div>
+        <% if (images.length === 0) { %>
+        <p class="empty">No images found</p>
+        <% } else { %>
+        <div class="gallery">
+          <% images.forEach((img) => { %>
+          <figure>
+            <img src="/gallery/<%= img %>" alt="<%= img %>" />
+            <figcaption><%= img %></figcaption>
+          </figure>
+          <% }) %>
+        </div>
+        <% } %>
+      </section>
+      <% } %>
+
+      <% if (view === "blog-list") { %>
+      <section class="card">
+        <div class="section-head">
+          <h2>Blog Posts</h2>
+          <a class="btn" href="/blog/new">New Post</a>
+        </div>
+        <% if (posts.length === 0) { %>
+        <p class="empty">No posts yet</p>
+        <% } else { %>
+        <ul class="posts">
+          <% posts.forEach((post) => { %>
+          <li>
+            <div>
+              <a class="post-title" href="/blog/<%= post.id %>"><%= post.title %></a>
+              <p class="post-excerpt"><%= post.body.slice(0, 120) %><%= post.body.length > 120 ? "..." : "" %></p>
+            </div>
+            <span class="date"><%= new Date(post.date).toLocaleString() %></span>
+          </li>
+          <% }) %>
+        </ul>
+        <% } %>
+      </section>
+      <% } %>
+
+      <% if (view === "blog-new") { %>
+      <section class="card">
+        <div class="section-head">
+          <h2>Create Post</h2>
+          <span class="pill">POST /blog</span>
+        </div>
+        <form class="form" method="POST" action="/blog">
+          <label>
+            Title
+            <input type="text" name="title" required />
+          </label>
+          <label>
+            Body
+            <textarea name="body" rows="6" required></textarea>
+          </label>
+          <button class="btn" type="submit">Publish</button>
+        </form>
+      </section>
+      <% } %>
+
+      <% if (view === "blog-view") { %>
+      <section class="card">
+        <div class="section-head">
+          <h2><%= post.title %></h2>
+          <span class="date"><%= new Date(post.date).toLocaleString() %></span>
+        </div>
+        <p class="post-body"><%= post.body %></p>
+        <a class="link" href="/blog">Back to posts</a>
+      </section>
+      <% } %>
+
+      <% if (view === "404") { %>
+      <section class="card not-found">
+        <h2>404</h2>
+        <p>The page you requested was not found.</p>
+        <a class="btn" href="/">Go home</a>
+      </section>
+      <% } %>
+    </main>
+
+    <footer class="site-footer">
+      <p>Assignment 3 with Express and EJS</p>
+    </footer>
+  </body>
+</html>
