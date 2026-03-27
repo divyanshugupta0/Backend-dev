@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="#" method="post">
+    <div class="form">
+        <h1>Application form</h1>
+        <label for="fname">First Name:</label>
+        <input type="text" placeholder="First Name">
+        <label for="lname">Last Name:</label>
+        <input type="text" placeholder="Last Name"><br><br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="0"><br><br>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com"><br><br>
+        <label for="position">Position Available:</label>
+        <input type="radio" id="position1" name="position" value="developer">
+        <label for="position1">Junior Developer</label>
+        <input type="radio" id="position2" name="position" value="designer">
+        <label for="position2">Mid-level Developer</label>
+        <input type="radio" id="position3" name="position" value="manager">
+        <label for="position3">Senior Developer</label><br><br>
+        <label for="Programming Language">Programming Language:</label>
+        <input type="checkbox" id="language1" name="language" value="javascript">
+        <label for="language1">JavaScript</label>
+        <input type="checkbox" id="language2" name="language" value="python">
+        <label for="language2">Python</label>
+        <input type="checkbox" id="language3" name="language" value="java">
+        <label for="language3">Java</label><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password"><br><br>
+        <div class="btn">
+            <button type="submit" value="Submit">Submit</button>
+            <button type="reset" value="Reset">Reset</button>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
